@@ -1,0 +1,35 @@
+return {
+  'nvimdev/dashboard-nvim',
+  event = 'VimEnter',
+  config = function()
+    require('dashboard').setup {
+      -- config
+      theme = 'doom', --  theme is doom and hyper default is hyper
+      shortcut_type = 'letter',   --  shorcut type 'letter' or 'number'
+      change_to_vcs_root = false,-- default is false,for open file in hyper mru. it will change to the root of vcs
+      config = {
+        config = {
+          center = {
+            {
+              icon = '',
+              icon_hl = 'group',
+              desc = 'description',
+              desc_hl = 'group',
+              key = 'shortcut key in dashboard buffer not keymap !!',
+              key_hl = 'group',
+              key_format = ' [%s]', -- `%s` will be substituted with value of `key`
+              action = '',
+            },
+          },
+          footer = {},
+        }
+      },    --  config used for theme
+      hide = {
+        statusline = true,    -- hide statusline default is true
+        tabline = true,       -- hide the tabline
+        winbar = true,        -- hide winbar
+      },
+    }
+  end,
+  dependencies = { {'nvim-tree/nvim-web-devicons'}}
+}
