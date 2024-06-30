@@ -18,6 +18,8 @@ if status is-interactive
 
   set -gx EDITOR nvim
 
+  set -Ux SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
+
   # zoxide vars
   set -gx _ZO_ECHO 1
   set -gx _ZO_EXCLUDE_DIRS "$HOME: $HOME/.private/*"
