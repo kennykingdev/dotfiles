@@ -1,10 +1,6 @@
 local wezterm = require("wezterm")
 local disable_default_super_key_bindings = require("disable_default_super_key_bindings")
 
--- Customize flexoki-dark color scheme to have a more neutral black background color
-local my_flexoki = wezterm.get_builtin_color_schemes()["flexoki-dark"]
-my_flexoki.background = "#0F0F0F"
-
 return {
 	font = wezterm.font("FiraCode Nerd Font Mono", {
 		weight = "Regular",
@@ -21,9 +17,6 @@ return {
 		bottom = "5px",
 	},
 	keys = disable_default_super_key_bindings.keys,
-	color_schemes = {
-		["flexoki-kk"] = my_flexoki,
-	},
-	color_scheme = "flexoki-kk",
+	color_scheme = "carbonfox",
 	window_background_opacity = 0.90,
 }
