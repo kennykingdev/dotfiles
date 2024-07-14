@@ -3,19 +3,16 @@ if status is-interactive
     abbr -a cd z
     abbr -a v nvim
     abbr -a cs "sudo checkservices"
-    abbr -a kssh "kitten ssh"
-    abbr -a edgar "kitten ssh edgar"
     abbr -a pn pnpm
     abbr -a cz chezmoi
+    abbr -a dcu "docker compose up"
+    abbr -a dcd "docker compose down"
 
     # Use eza instead of ls
     alias ls "eza --icons --color=always --group-directories-first"
     alias ll "eza -alF --icons --color=always --group-directories-first"
     alias la "eza -a --icons --color=always --group-directories-first"
     alias l "eza -F --icons --color=always --group-directories-first"
-
-    abbr -a dcu "docker compose up"
-    abbr -a dcd "docker compose down"
 
     set -gx EDITOR nvim
 
