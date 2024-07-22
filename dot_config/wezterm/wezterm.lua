@@ -17,6 +17,6 @@ return {
 		bottom = "5px",
 	},
 	keys = disable_default_super_key_bindings.keys,
-	color_scheme = "carbonfox",
+	color_scheme = "flexoki-dark",
 	window_background_opacity = 0.90,
 }
