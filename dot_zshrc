@@ -43,6 +43,9 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 # ssh-agent - enable agent forwarding
 zstyle ':omz:plugins:ssh-agent' 'agent-forwarding' yes
 zstyle ':omz:plugins:ssh-agent' 'identities' github_id_ed25519
+# ssh-agent silence for p10k instant prompt
+zstyle ':omz:plugins:ssh-agent' quiet yes
+zstyle ':omz:plugins:ssh-agent' lazy yes
 
 ### Plugins
 zinit light zsh-users/zsh-syntax-highlighting
