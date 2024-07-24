@@ -1,14 +1,16 @@
 return {
-  { "EdenEast/nightfox.nvim", opts = {
-    options = {
-      transparent = true,
+  {
+    "folke/tokyonight.nvim",
+    lazy = true,
+    opts = {
+      style = "night",
     },
-  } },
+  },
   -- Configure LazyVim to load colorscheme
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "carbonfox",
+      colorscheme = "tokyonight",
     },
   },
 }
