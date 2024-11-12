@@ -106,6 +106,9 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 ### Aliases
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 # Edit zsh config file
 alias zshcfg="$EDITOR ~/.zshrc"
 # How many times can you be bothered to type the same full command names?
@@ -129,6 +132,10 @@ alias la="eza -alF --header --git --git-repos --icons --color=always --group-dir
 # Docker
 # alias dcu="docker compose up"
 # alias dcd="docker compose down"
+alias grep="grep --color=auto"
+alias md="mkdir -p"
+alias shutdown="sudo shutdown now"
+alias reboot="sudo reboot"
 
 ### Environment Variables
 # interactive session related stuff here
