@@ -1,0 +1,9 @@
+[default]
+duration = "30m"
+mode = "center"
+sorting = "random"
+
+[any]
+path = "/mnt/movies/wallpapers/current_favs/"
+
+[default.transition.hexagonalize]
