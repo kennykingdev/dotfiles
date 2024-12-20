@@ -12,6 +12,7 @@ set $term kitty
 set $browser firefox
 set $email thunderbird
 set $notes obsidian
+set $launcher "rofi -show drun"
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -90,7 +91,7 @@ exec wl-paste -t text --watch clipman store --no-persist
     bindsym $mod+Shift+q exec wlogout
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+d exec $launcher
 
     # Lock screen
     bindsym $mod+Escape exec swaylock -f
