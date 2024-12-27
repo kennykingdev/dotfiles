@@ -1,15 +1,23 @@
-local carbonfox = {
-  "EdenEast/nightfox.nvim",
+local oxocarbon = {
+  "nyoom-engineering/oxocarbon.nvim",
   lazy = false,
-  opts = {
-    options = {
-      transparent = true,
-    },
-  },
   config = function()
-    vim.cmd('colorscheme carbonfox')
+    vim.cmd('colorscheme oxocarbon')
   end
 }
+
+-- local carbonfox = {
+--   "EdenEast/nightfox.nvim",
+--   lazy = false,
+--   opts = {
+--     options = {
+--       transparent = true,
+--     },
+--   },
+--   config = function()
+--     vim.cmd('colorscheme carbonfox')
+--   end
+-- }
 
 -- local flexoki = {
 --   'kepano/flexoki-neovim',
@@ -20,4 +28,4 @@ local carbonfox = {
 --   end
 -- }
 
-return carbonfox
+return oxocarbon
