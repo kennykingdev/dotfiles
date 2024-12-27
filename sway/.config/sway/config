@@ -30,7 +30,7 @@ bindswitch --reload --locked lid:off output $laptop_display enable
 
 ### Styling
 # default font
-font pango: Source Code Pro 10
+font pango: SauceCodePro Nerd Font 10
 # no title, just border
 default_border pixel 3
 # hide border if only one container on workspace
