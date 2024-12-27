@@ -8,7 +8,7 @@ set $down j
 set $up k
 set $right l
 
-set $term kitty
+set $term ghostty
 set $browser firefox
 set $email thunderbird
 set $notes obsidian
