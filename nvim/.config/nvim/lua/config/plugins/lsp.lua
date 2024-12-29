@@ -13,6 +13,7 @@ return {
         "lua_ls",
         "ts_ls",
         "denols",
+        "biome",
       },
     },
   },
@@ -36,6 +37,10 @@ return {
         root_dir = lspconfig.util.root_pattern("package.json"),
         single_file_support = false,
         capabilites = capabilities,
+      })
+      lspconfig.biome.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
       })
 
       -- Run this stuff when an LSP attaches
