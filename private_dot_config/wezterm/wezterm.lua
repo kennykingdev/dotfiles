@@ -5,8 +5,7 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- config.color_scheme = "tokyonight_night"
-config.color_scheme = "Liquid Carbon Transparent (Gogh)"
--- config.color_scheme = "Kanagawa Dragon (Gogh)"
+config.color_scheme = "Kanagawa Dragon (Gogh)"
 config.font = wezterm.font("SauceCodePro Nerd Font Mono")
 config.enable_tab_bar = false
 config.window_background_opacity = 0.9
