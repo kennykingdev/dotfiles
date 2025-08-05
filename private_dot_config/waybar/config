@@ -1,0 +1,206 @@
+{
+  // Waybar at top layer
+  "layer": "top",
+  // Waybar height (to be removed for auto height)
+  "height": 30, 
+  // Gaps between modules (4px)
+  "spacing": 4,
+  // Choose the order of the modules
+  "modules-left": [
+    "custom/launcher",
+    "niri/workspaces"
+    //"mpd",
+  ],
+  "modules-center": ["niri/window"],
+  "modules-right": [
+    // "gamemode",
+    "idle_inhibitor",
+    "power-profiles-daemon",
+    "tray",
+    "pulseaudio",
+    "backlight",
+    "cpu",
+    "temperature",
+    "battery",
+    "clock"
+  ],
+
+  // Modules configuration
+  "custom/launcher": {
+    "format": "󰣇",
+    "on-click": "thunar",
+    "tooltip": "Thunar"
+  },
+  "niri/workspaces": {
+    "all-outputs": false, // show workspaces on all outputs
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "urgent": "",
+      "default": ""
+    }
+  },
+  "niri/window": {
+    "format": "{}",
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "🌎 $1",
+      "(.*) — Zen Browser": "🌎 $1"
+      // "nvim": " - Neovim",
+      // "(.*) - zsh": "> [$1]"
+    }
+  },
+  "gamemode": {
+    "format": "{glyph}",
+    "format-alt": "{glyph} {count}",
+    "glyph": "",
+    "hide-not-running": false,
+    "use-icon": true,
+    "icon-name": "input-gaming-symbolic",
+    "icon-spacing": 4,
+    "icon-size": 20,
+    "tooltip": true,
+    "tooltip-format": "Games running: {count}"
+  },
+  "mpd": {
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "unknown-tag": "N/A",
+    "interval": 2,
+    "consume-icons": {
+      "on": " "
+    },
+    "random-icons": {
+      "off": "<span color=\"#f53c3c\"></span> ",
+      "on": " "
+    },
+    "repeat-icons": {
+      "on": " "
+    },
+    "single-icons": {
+      "on": "1 "
+    },
+    "state-icons": {
+      "paused": "",
+      "playing": ""
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+    "show-passive-items": true
+  },
+  "clock": {
+    "timezone": "America/Los_Angeles",
+    "format": "{:%I:%M %p}",
+    "tooltip-format": "\n<span size='14pt' font='JetBrains Mono ExtraBold'>{calendar}</span>",
+    "format-alt": "{:%a - %b %e, %Y}",
+    "interval": 1,
+    "calendar": {
+      "mode"          : "month",
+      "mode-mon-col"  : 3,
+      "on-scroll"     : 1,
+      "on-click-right": "mode",
+      "format": {
+        "months":     "<span color='#5e81ac'><b>{}</b></span>",
+        "days":       "<span color='#88c0d0'><b>{}</b></span>",
+        "weekdays":   "<span color='#d08770'><b>{}</b></span>",
+        "today":      "<span color='#bf616a'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "{}% "
+  },
+  "temperature": {
+    "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
+    "critical-threshold": 80,
+    // "format-critical": "{temperatureC}°C {icon}",
+    "format": "{temperatureC}°C "
+  },
+  "backlight": {
+    "format": "{icon}",
+    // "format": "{percent}% {icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+  "battery": {
+    "interval": 10,
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    // Option to enable the use of the design capacity instead of the actual maximal capacity. Thus, even full, the battery may be at less than 100%.
+    "design-capacity": true,
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "pulseaudio": {
+    "scroll-step": 5, // %, can be a float
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "custom/media": {
+    "format": "{icon} {}",
+    "return-type": "json",
+    "max-length": 40,
+    "format-icons": {
+      "spotify": "",
+      "default": "🎜"
+    },
+    "escape": true,
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+  }
+}
+
